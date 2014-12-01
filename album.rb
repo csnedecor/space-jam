@@ -22,10 +22,11 @@ class Album
   end
 
   def duration_min
+    duration_min = 0.00
     tracks.each do |info|
       @duration_ms = info.duration_ms
+      duration_min += @duration_ms.to_f / 60000
     end
-    duration_min = @duration_ms.to_f / 60000
     duration_min.round(2)
   end
 
