@@ -14,19 +14,19 @@ class Album
   end
 
   def track_list
-    @track_list = []
+    track_list = []
     tracks.each do |track|
-      @track_list << track.title
+      track_list << track.title
     end
-    @track_list
+    track_list
   end
 
   def duration_min
-    @tracks.each do |info|
+    tracks.each do |info|
       @duration_ms = info.duration_ms
     end
-    @duration_min = @duration_ms.to_f / 60000
-    @duration_min.round(2)
+    duration_min = @duration_ms.to_f / 60000
+    duration_min.round(2)
   end
 
   def summary
